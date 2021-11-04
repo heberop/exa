@@ -52,23 +52,23 @@ lazy_static! {
         m.insert(".atom", '\u{e764}'); // 
         m.insert(".bashprofile", '\u{e615}'); // 
         m.insert(".bashrc", '\u{f489}'); // 
-        m.insert(".git", '\u{f1d3}'); // 
-        m.insert(".gitattributes", '\u{f1d3}'); // 
-        m.insert(".gitconfig", '\u{f1d3}'); // 
+        m.insert(".git", '\u{e5fb}'); // 
+        m.insert(".gitattributes", '\u{e702}'); // 
+        m.insert(".gitconfig", '\u{e702}'); // 
         m.insert(".github", '\u{f408}'); // 
-        m.insert(".gitignore", '\u{f1d3}'); // 
-        m.insert(".gitmodules", '\u{f1d3}'); // 
+        m.insert(".gitignore", '\u{e702}'); // 
+        m.insert(".gitmodules", '\u{e702}'); // 
         m.insert(".rvm", '\u{e21e}'); // 
         m.insert(".vimrc", '\u{e62b}'); // 
         m.insert(".vscode", '\u{e70c}'); // 
         m.insert(".zshrc", '\u{f489}'); // 
         m.insert("Cargo.lock", '\u{e7a8}'); // 
-        m.insert("bin", '\u{e5fc}'); // 
+        m.insert("bin", '\u{f471}'); // 
         m.insert("config", '\u{e5fc}'); // 
         m.insert("docker-compose.yml", '\u{f308}'); // 
         m.insert("Dockerfile", '\u{f308}'); // 
         m.insert("ds_store", '\u{f179}'); // 
-        m.insert("gitignore_global", '\u{f1d3}'); // 
+        m.insert("gitignore_global", '\u{e702}'); // 
         m.insert("gradle", '\u{e70e}'); // 
         m.insert("gruntfile.coffee", '\u{e611}'); // 
         m.insert("gruntfile.js", '\u{e611}'); // 
@@ -84,6 +84,9 @@ lazy_static! {
         m.insert("node_modules", '\u{e718}'); // 
         m.insert("npmignore", '\u{e71e}'); // 
         m.insert("rubydoc", '\u{e73b}'); // 
+        m.insert("README.md", '\u{f831}'); // 
+        m.insert("ReadMe.md", '\u{f831}'); // 
+        m.insert("readme.md", '\u{f831}'); // 
         m.insert("yarn.lock", '\u{e718}'); // 
 
         m
@@ -97,9 +100,10 @@ pub fn icon_for_file(file: &File<'_>) -> char {
     else if file.points_to_directory() {
         match file.name.as_str() {
             "bin"           => '\u{e5fc}', // 
-            ".git"          => '\u{f1d3}', // 
+            ".git"          => '\u{e5fb}', // 
             ".idea"         => '\u{e7b5}', // 
-            _               => '\u{f115}'  // 
+            "src"           => '\u{f489}', // 
+            _               => '\u{f413}'  // 
         }
     }
     else if let Some(icon) = extensions.icon_file(file) { icon }
@@ -138,7 +142,7 @@ pub fn icon_for_file(file: &File<'_>) -> char {
             "cs"            => '\u{f81a}', // 
             "csh"           => '\u{f489}', // 
             "cshtml"        => '\u{f1fa}', // 
-            "csproj"        => '\u{f81a}', // 
+            "csproj"        => '\u{e70c}', // 
             "css"           => '\u{e749}', // 
             "csv"           => '\u{f1c3}', // 
             "csx"           => '\u{f81a}', // 
@@ -149,7 +153,7 @@ pub fn icon_for_file(file: &File<'_>) -> char {
             "deb"           => '\u{e77d}', // 
             "diff"          => '\u{f440}', // 
             "djvu"          => '\u{f02d}', // 
-            "dll"           => '\u{e70f}', // 
+            "dll"           => '\u{f187}', // 
             "doc"           => '\u{f1c2}', // 
             "docx"          => '\u{f1c2}', // 
             "ds_store"      => '\u{f179}', // 
@@ -180,10 +184,10 @@ pub fn icon_for_file(file: &File<'_>) -> char {
             "gemspec"       => '\u{e21e}', // 
             "gform"         => '\u{f298}', // 
             "gif"           => '\u{f1c5}', // 
-            "git"           => '\u{f1d3}', // 
-            "gitattributes" => '\u{f1d3}', // 
-            "gitignore"     => '\u{f1d3}', // 
-            "gitmodules"    => '\u{f1d3}', // 
+            "git"           => '\u{e5fb}', // 
+            "gitattributes" => '\u{e702}', // 
+            "gitignore"     => '\u{e702}', // 
+            "gitmodules"    => '\u{e702}', // 
             "go"            => '\u{e626}', // 
             "gradle"        => '\u{e70e}', // 
             "groovy"        => '\u{e775}', // 
@@ -256,6 +260,7 @@ pub fn icon_for_file(file: &File<'_>) -> char {
             "ogv"           => '\u{f03d}', // 
             "otf"           => '\u{f031}', // 
             "patch"         => '\u{f440}', // 
+            "pdb"           => '\u{e706}', // 
             "pdf"           => '\u{f1c1}', // 
             "php"           => '\u{e73d}', // 
             "pl"            => '\u{e769}', // 
@@ -278,7 +283,7 @@ pub fn icon_for_file(file: &File<'_>) -> char {
             "rdb"           => '\u{e76d}', // 
             "rdoc"          => '\u{f48a}', // 
             "rds"           => '\u{f25d}', // 
-            "readme"        => '\u{f48a}', // 
+            "readme"        => '\u{f831}', // 
             "rlib"          => '\u{e7a8}', // 
             "rmd"           => '\u{f48a}', // 
             "rpm"           => '\u{e7bb}', // 
